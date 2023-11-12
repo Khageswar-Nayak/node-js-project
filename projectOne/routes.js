@@ -23,6 +23,7 @@ const requestHandler = (req, res) => {
       console.log(chunk);
       body.push(chunk);
     });
+
     req.on("end", () => {
       const parsedBody = Buffer.concat(body).toString();
       console.log(parsedBody);
